@@ -1,0 +1,13 @@
+# AlCaPhiSymRecHits producer
+module alCaPhiSymRecHits = AlCaPhiSymRecHitsProducer
+{
+    string VerbosityLevel = "ERROR"
+
+    string ecalRecHitsProducer = "ecalRecHit"
+    string barrelHitCollection = "EcalRecHitsEB"
+    string endcapHitCollection = "EcalRecHitsEE"
+    string phiSymBarrelHitCollection = "phiSymEcalRecHitsEB"
+    string phiSymEndcapHitCollection = "phiSymEcalRecHitsEE"
+    double eCut_barrel = 0.15
+    double eCut_endcap = 0.75
+}
