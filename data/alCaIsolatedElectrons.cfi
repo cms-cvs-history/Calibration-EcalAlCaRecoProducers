@@ -5,7 +5,7 @@ module alCaIsolatedElectrons = AlCaElectronsProducer{
   string siStripElectronProducer = "siStripElectrons"
   string pixelMatchElectronCollection = ""
   string siStripElectronCollection = ""
-  string alcaPixelMatchElectronCollection = "MieiElettroni"
-  string alcaSiStripElectronCollection = "MieiSiStripElettroni"
+  string alcaPixelMatchElectronCollection = "AlCaPixelMatchElectrons"
+  string alcaSiStripElectronCollection = "AlCaSiStripElectrons"
   double ptCut = 20.0
 }
