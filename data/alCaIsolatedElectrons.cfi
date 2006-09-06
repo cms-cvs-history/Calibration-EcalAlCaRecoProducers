@@ -1,0 +1,11 @@
+# AlCaPhiSymRecHits producer
+module alCaIsolatedElectrons = AlCaElectronsProducer{
+#  bool filter = true
+  string pixelMatchElectronProducer = "pixelMatchElectrons"
+  string siStripElectronProducer = "siStripElectrons"
+  string pixelMatchElectronCollection = ""
+  string siStripElectronCollection = ""
+  string alcaPixelMatchElectronCollection = "MieiElettroni"
+  string alcaSiStripElectronCollection = "MieiSiStripElettroni"
+  double ptCut = 20.0
+}
