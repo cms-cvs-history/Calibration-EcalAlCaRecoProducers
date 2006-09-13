@@ -1,64 +1,22 @@
 # AlCaPhiSymRecHits producer
 module alCaIsolatedElectrons = AlCaElectronsProducer{
-#  bool filter = true
 
- # string pixelMatchElectronProducer = "pixelMatchElectrons"
   string siStripElectronProducer = "siStripElectrons"
 
-#  string pixelMatchElectronCollection = ""
   string siStripElectronCollection = ""
 
   string barrelHitCollection = "EcalRecHitsEB"
-#  string endcapHitCollection = "EcalRecHitsEE"
   string ecalRecHitsProducer = "ecalRecHit"
-
-#  string hybridSuperClusterProducer   = "hybridSuperClusters"
-#  string hybridSuperClusterCollection = ""
- 
-#  string correctedHybridSuperClusterProducer = "correctedHybridSuperClusters"
-#  string correctedHybridSuperClusterCollection = ""
 
 # output collections
 
-#  string alcaPixelMatchElectronCollection = "AlCaPixelMatchElectrons"
 
   string alcaSiStripElectronCollection = "AlCaSiStripElectrons"
 
   string alcaBarrelHitCollection = "alcaBarrelHits"
 
-#  string alcaBasicClusterCollection = "alcaBasicClusters"
   
   string alcaHybridSuperClusterCollection = "alcaHybridSuperClusters"
   
-#  string alcaCorrectedHybridSuperClusterCollection = "alcaCorrectedHybridSuperClusters"
-#  string alcaEndcapHitCollection = "alcaEndcapHits"
-
-
-#  string islandBarrelBasicClusterProducer   = "islandBasicClusters"
-#  string islandBarrelBasicClusterCollection = "islandBarrelBasicClusters"
-
-
-#  string islandBarrelSuperClusterProducer   = "islandSuperClusters"
-#  string islandBarrelSuperClusterCollection = "islandBarrelSuperClusters"
-
-#  string correctedIslandBarrelSuperClusterProducer   = "correctedIslandBarrelSuperClusters"
-#  string correctedIslandBarrelSuperClusterCollection = ""
-
-  #
-  # island clustering in endcap
-  #
-#  string islandEndcapBasicClusterProducer   = "islandBasicClusters"
-#  string islandEndcapBasicClusterCollection = "islandEndcapBasicClusters"
-
-#  string islandEndcapSuperClusterProducer   = "islandSuperClusters"
-#  string islandEndcapSuperClusterCollection = "islandEndcapSuperClusters"
-
-#  string correctedIslandEndcapSuperClusterProducer   = "correctedIslandEndcapSuperClusters"
-#  string correctedIslandEndcapSuperClusterCollection = ""
-
-  #
-  # hybrid clustering in barrel
-  #
- 
   double ptCut = 20.0
 }
