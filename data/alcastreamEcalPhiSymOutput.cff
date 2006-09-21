@@ -1,0 +1,11 @@
+# output block for alcastream EcalPhiSym
+
+  # output module 
+  module alcastreamEcalPhiSymOutput = PoolOutputModule
+  {
+     untracked vstring outputCommands = 
+     {
+       "drop *",
+       "keep EcalRecHitsSorted_alCaPhiSymRecHits_*_*"
+     }
+  }	

@@ -1,0 +1,23 @@
+#
+#  run on collection of electrons to make a collection of AlCaReco electrons 
+#  and store them in the output collection
+#
+
+
+  # hybrid clustering in the barrel
+  include "RecoEcal/EgammaClusterProducers/data/hybridClusteringSequence.cff"
+  
+  # island clustering for the endcaps
+  include "RecoEcal/EgammaClusterProducers/data/islandClusteringSequence.cff"
+  
+  include "Geometry/CaloEventSetup/data/CaloGeometry.cfi"
+  
+  # sequence to make si-strip based electrons
+  include "RecoEgamma/EgammaElectronProducers/data/electronSequence.cff"
+
+
+  include "Calibration/EcalAlCaRecoProducers/data/alCaIsolatedElectrons.cfi"
+
+
+
+  sequence alcastreamElectron = {hybridClusteringSequence, islandClusteringSequence,electronSequence, alCaIsolatedElectrons}

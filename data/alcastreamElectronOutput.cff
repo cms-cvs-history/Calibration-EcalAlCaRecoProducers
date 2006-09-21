@@ -1,0 +1,11 @@
+# output block for alcastream Electron
+
+  # output module 
+  module alcastreamElecronOutput = PoolOutputModule
+  {
+     untracked vstring outputCommands = 
+     {
+       "drop  *",
+       "keep *_alCaIsolatedElectrons_*_*"
+     }
+  }	
