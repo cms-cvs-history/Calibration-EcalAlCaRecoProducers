@@ -18,6 +18,5 @@
 
   include "Calibration/EcalAlCaRecoProducers/data/alCaIsolatedElectrons.cfi"
 
-
-
-  sequence alcastreamElectron = {hybridClusteringSequence, islandClusteringSequence,electronSequence, alCaIsolatedElectrons}
+#  sequence alcastreamElectron = {hybridClusteringSequence, islandClusteringSequence,electronSequence, alCaIsolatedElectrons}
+  path	alcastreamElectron = {hybridClusteringSequence, islandClusteringSequence,electronSequence, alCaIsolatedElectrons}

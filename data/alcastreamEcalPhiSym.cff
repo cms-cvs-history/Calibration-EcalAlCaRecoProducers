@@ -5,4 +5,5 @@
   # create sequence for rechit filtering for phi symmetry calibration
   include "Calibration/EcalAlCaRecoProducers/data/alCaPhiSymRecHits.cfi"
 
-  sequence alcastreamEcalPhiSym = {alCaPhiSymRecHits}
+//  sequence alcastreamEcalPhiSym = {alCaPhiSymRecHits}
+  path alcastreamEcalPhiSym = {alCaPhiSymRecHits}

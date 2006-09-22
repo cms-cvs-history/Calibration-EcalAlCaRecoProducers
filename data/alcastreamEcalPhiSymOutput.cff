@@ -1,11 +1,17 @@
 # output block for alcastream EcalPhiSym
 
   # output module 
-  module alcastreamEcalPhiSymOutput = PoolOutputModule
-  {
+#  module alcastreamEcalPhiSymOutput = PoolOutputModule
+  block alcastreamEcalPhiSymOutput = {
      untracked vstring outputCommands = 
      {
        "drop *",
        "keep EcalRecHitsSorted_alCaPhiSymRecHits_*_*"
      }
-  }	
+
+# put this if you have a filter
+#    untracked PSet SelectEvents = {
+#      vstring SelectEvents = { "alcastreamEcalPhiSym" }
+#    }
+
+  }
