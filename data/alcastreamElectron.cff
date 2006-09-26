@@ -19,4 +19,7 @@
   include "Calibration/EcalAlCaRecoProducers/data/alCaIsolatedElectrons.cfi"
 
 #  sequence alcastreamElectron = {hybridClusteringSequence, islandClusteringSequence,electronSequence, alCaIsolatedElectrons}
-  path	alcastreamElectron = {hybridClusteringSequence, islandClusteringSequence,electronSequence, alCaIsolatedElectrons}
+# this is the full path if you start from uncalibrated RecHits
+#  path	alcastreamElectron = {hybridClusteringSequence, islandClusteringSequence,electronSequence, alCaIsolatedElectrons}
+# use this if siStripElectrons are already present
+  path	alcastreamElectron = {alCaIsolatedElectrons}
