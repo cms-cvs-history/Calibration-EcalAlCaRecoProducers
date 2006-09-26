@@ -22,4 +22,5 @@
 # this is the full path if you start from uncalibrated RecHits
 #  path	alcastreamElectron = {hybridClusteringSequence, islandClusteringSequence,electronSequence, alCaIsolatedElectrons}
 # use this if siStripElectrons are already present
-  path	alcastreamElectron = {alCaIsolatedElectrons}
+#  path	alcastreamElectron = {alCaIsolatedElectrons}
+  sequence	seqAlcastreamElectron = {alCaIsolatedElectrons}

@@ -6,4 +6,5 @@
   include "Calibration/EcalAlCaRecoProducers/data/alCaPhiSymRecHits.cfi"
 
 //  sequence alcastreamEcalPhiSym = {alCaPhiSymRecHits}
-  path alcastreamEcalPhiSym = {alCaPhiSymRecHits}
+//  path alcastreamEcalPhiSym = {alCaPhiSymRecHits}
+  sequence seqAlcastreamEcalPhiSym = {alCaPhiSymRecHits}
