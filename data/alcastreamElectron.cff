@@ -16,11 +16,22 @@
   include "RecoEgamma/EgammaElectronProducers/data/electronSequence.cff"
 
 
-  include "Calibration/EcalAlCaRecoProducers/data/alCaIsolatedElectrons.cfi"
+   module electronFilter = EtaPtMinElectronSelector
+    {
+	InputTag src = pixelMatchElectrons
+	bool filter = true
+	double ptMin = 5.0
+	double etaMin = -2.7
+	double etaMax = 2.7
+    }
+
+ include "Calibration/EcalAlCaRecoProducers/data/alCaIsolatedElectrons.cfi"
+
 
 #  sequence alcastreamElectron = {hybridClusteringSequence, islandClusteringSequence,electronSequence, alCaIsolatedElectrons}
 # this is the full path if you start from uncalibrated RecHits
 #  path	alcastreamElectron = {hybridClusteringSequence, islandClusteringSequence,electronSequence, alCaIsolatedElectrons}
 # use this if siStripElectrons are already present
 #  path	alcastreamElectron = {alCaIsolatedElectrons}
-  sequence	seqAlcastreamElectron = {alCaIsolatedElectrons}
+
+  sequence seqAlcastreamElectron = {electronFilter,alCaIsolatedElectrons}
