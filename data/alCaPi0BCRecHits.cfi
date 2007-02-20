@@ -6,7 +6,7 @@ module alCaPi0BCRecHits = AlCaPi0BasicClusterRecHitsProducer
     string ecalRecHitsProducer = "ecalRecHit"
     string barrelHitCollection = "EcalRecHitsEB"
     string pi0BarrelHitCollection = "pi0EcalRecHitsEB"
-    string pi0BarrelBC = "pi0islandBarrelBasicClusters"
+
     string islandBCProd = "islandBasicClusters"
     string islandBCColl = "islandBarrelBasicClusters"
 
