@@ -7,10 +7,6 @@
      untracked vstring outputCommands = 
      {
        "drop  *",
-       "keep  recoGsfTracks_GsfElectrons_*_*",
-       "keep  recoGsfTracks_pixelMatchGsfFitBarrel_*_*",
-       "keep  recoGsfTracks_pixelMatchGsfFitEndcap_*_*",
-       "keep  *_pixelMatchGsfElectrons_*_*",
        "keep  *_electronFilter_*_*",
        "keep  *_alCaIsolatedElectrons_*_*"
      }

@@ -16,9 +16,9 @@
   include "RecoEgamma/EgammaElectronProducers/data/electronSequence.cff"
 
 
-   module electronFilter = EtaPtMinElectronSelector
+   module electronFilter = EtaPtMinPixelMatchGsfElectronSelector
     {
-	InputTag src = pixelMatchElectrons
+	InputTag src = pixelMatchGsfElectrons
 	bool filter = true
 	double ptMin = 5.0
 	double etaMin = -2.7

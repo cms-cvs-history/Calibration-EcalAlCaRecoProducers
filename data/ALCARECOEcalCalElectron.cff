@@ -16,7 +16,7 @@
   include "RecoEgamma/EgammaElectronProducers/data/electronSequence.cff"
 
 
-   module electronFilter = EtaPtMinPixelMatchGsfElectronSelector
+   module electronFilter = EtaPtMinPixelMatchGsfElectronFullCloneSelector
     {
 	InputTag src = pixelMatchGsfElectrons
 	bool filter = true
