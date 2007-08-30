@@ -1,0 +1,14 @@
+############### zeeHLT.cff #########
+
+module report=HLTrigReport{
+    InputTag HLTriggerResults = TriggerResults
+}
+
+module zeeHLT= HLTHighLevel{
+    InputTag TriggerResultsTag = TriggerResults
+    bool byName = true
+    bool andOr= true
+    vstring HLTPaths ={ "HLT1Electron", "HLT2Electron" }
+}
+
+############### zeeHLT.cff #########

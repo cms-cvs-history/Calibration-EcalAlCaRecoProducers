@@ -1,0 +1,6 @@
+module outZeeAlca = PoolOutputModule
+{
+    untracked string fileName = "alCaElectrons_se.root"
+    using OutALCARECOEcalCalElectron
+    
+}
