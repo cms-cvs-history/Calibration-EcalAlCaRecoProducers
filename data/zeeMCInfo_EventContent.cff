@@ -1,7 +1,0 @@
-#### zeeMCInfo_EventContent.cff #########
-block MCInfo = {
-    untracked vstring outputCommands = {
-	"keep *_zeeMCFilter_*_*"
-    }
-}
-########################################
