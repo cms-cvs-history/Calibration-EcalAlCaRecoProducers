@@ -1,10 +1,10 @@
 # AlCaPi0RecHits producer
-module alCaPi0RecHits = AlCaPi0RecHitsProducer
+module alCaPi0RegRecHits = AlCaPi0RecHitsProducer
 {
     string VerbosityLevel = "ERROR"
 
-    string ecalRecHitsProducer = "ecalRecHit"
-    string barrelHitCollection = "EcalRecHitsEB"
+    string ecalRecHitsProducer = "ecalRegionalEgammaRecHit"
+    string barrelHitCollection = "EcalRegRecHitsEB"
     string pi0BarrelHitCollection = "pi0EcalRecHitsEB"
 
     int32 gammaCandEtaSize = 21
@@ -19,5 +19,5 @@ module alCaPi0RecHits = AlCaPi0RecHitsProducer
     double selePtPi0 = 2.5	    		
     double seleMinvMaxPi0 = 0.2
     double seleMinvMinPi0 = 0.
-    double seleXtalMinEnergy = 0.
+    double seleXtalMinEnergy = 0.	
 }
