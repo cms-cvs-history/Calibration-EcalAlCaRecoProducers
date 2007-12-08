@@ -17,7 +17,9 @@ module alCaPi0RegRecHits = AlCaPi0RecHitsProducer
     double selePtGammaOne = 1.0	    		
     double selePtGammaTwo = 1.0	    		
     double selePtPi0 = 2.5	    		
-    double seleMinvMaxPi0 = 0.2
-    double seleMinvMinPi0 = 0.
+    double seleMinvMaxPi0 = 0.16
+    double seleMinvMinPi0 = 0.09
     double seleXtalMinEnergy = 0.	
+    int32 seleNRHMax = 75
+
 }
