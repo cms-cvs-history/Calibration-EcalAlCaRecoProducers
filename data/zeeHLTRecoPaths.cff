@@ -1,3 +1,5 @@
+include "Calibration/EcalAlCaRecoProducers/data/zeeHLT.cff"
+include "ElectroWeakAnalysis/ZReco/data/zToEE.cfi"
 path zeeHLTPath = {report, zeeHLT & zToEE}
 
 

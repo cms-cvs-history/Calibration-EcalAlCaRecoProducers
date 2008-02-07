@@ -1,3 +1,5 @@
+include "Calibration/EcalAlCaRecoProducers/data/ALCARECOEcalCalElectron_Output.cff"
+
 module outZeeAlca = PoolOutputModule
 {
     untracked string fileName = "alCaElectrons_se.root"
