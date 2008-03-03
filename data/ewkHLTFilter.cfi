@@ -1,0 +1,5 @@
+module ewkHLTFilter = hltHighLevel from "HLTrigger/HLTfilters/data/hltHighLevel.cfi"
+#replace ewkHLTFilter.HLTPaths ={"HLT1Electron","HLT1ElectronRelaxed", "HLT2Electron","HLT2ElectronRelaxed"}
+
+
+
