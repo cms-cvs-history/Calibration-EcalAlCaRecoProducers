@@ -6,7 +6,7 @@
      untracked vstring outputCommands = 
      {
        "drop *",
-       "keep EcalRecHitsSorted__*_*"
+       "keep EcalRecHitsSorted_alCaPhiSymRecHits_*_*"
      }
 
 # put this if you have a filter

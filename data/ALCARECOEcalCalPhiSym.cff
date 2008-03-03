@@ -3,6 +3,8 @@
   #AlCaReco filtering for phi symmetry calibration:
   #------------------------------------------------
   # create sequence for rechit filtering for phi symmetry calibration
-  include "Calibration/EcalAlCaRecoProducers/data/alcastreamEcalPhiSym.cff"
+  include "Calibration/EcalAlCaRecoProducers/data/alCaPhiSymRecHits.cfi"
 
-  sequence seqALCARECOEcalCalPhiSym = {ecalphiSymHLT}
+//  sequence alcastreamEcalPhiSym = {alCaPhiSymRecHits}
+//  path alcastreamEcalPhiSym = {alCaPhiSymRecHits}
+  sequence seqALCARECOEcalCalPhiSym = {alCaPhiSymRecHits}
