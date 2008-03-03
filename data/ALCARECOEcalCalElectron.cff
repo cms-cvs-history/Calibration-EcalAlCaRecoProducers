@@ -16,15 +16,6 @@
   include "RecoEgamma/EgammaElectronProducers/data/electronSequence.cff"
 
 
-   module electronFilter = EtaPtMinPixelMatchGsfElectronFullCloneSelector
-    {
-	InputTag src = pixelMatchGsfElectrons
-	bool filter = true
-	double ptMin = 5.0
-	double etaMin = -2.7
-	double etaMax = 2.7
-    }
-
  include "Calibration/EcalAlCaRecoProducers/data/alCaIsolatedElectrons.cfi"
 
 
@@ -36,4 +27,4 @@
 # use this if siStripElectrons are already present
 #  path	alcastreamElectron = {alCaIsolatedElectrons}
 
-  sequence seqALCARECOEcalCalElectron = {electronFilter,alCaIsolatedElectrons}
+  sequence seqALCARECOEcalCalElectron = {alCaIsolatedElectrons}
