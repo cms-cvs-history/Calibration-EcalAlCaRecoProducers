@@ -2,9 +2,16 @@
   #------------------------------------------------
   #AlCaReco filtering for phi symmetry calibration:
   #------------------------------------------------
-  # create sequence for rechit filtering for phi symmetry calibration
-  include "Calibration/EcalAlCaRecoProducers/data/alCaPhiSymRecHits.cfi"
+  #
+  # Passes events that are coming from the online phi-symmetry stream 
+  # 
+  # Id: $Id$
+  #
+ 
+  module ecalphiSymHLT= HLTHighLevel {
+      InputTag TriggerResultsTag = TriggerResults::HLT
+      bool andOr= true
+      vstring HLTPaths ={"CandHLTEcalPhiSym"}
+  }
 
-//  sequence alcastreamEcalPhiSym = {alCaPhiSymRecHits}
-//  path alcastreamEcalPhiSym = {alCaPhiSymRecHits}
-  sequence seqAlcastreamEcalPhiSym = {alCaPhiSymRecHits}
+ 
