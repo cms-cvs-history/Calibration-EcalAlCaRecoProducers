@@ -6,6 +6,7 @@ block OutALCARECOEcalCalElectron =
       {
         "drop  *",
         "keep  *_electronFilter_*_*",
-        "keep  *_alCaIsolatedElectrons_*_*"
+        "keep  *_alCaIsolatedElectrons_*_*",
+        "keep  edmTriggerResults_*_*_*"
       }
   }	
