@@ -1,17 +1,11 @@
 # output block for alcastream Electron
 
-  # output module 
-#  module alcastreamElecronOutput = PoolOutputModule
-
-  block OutALCARECOEcalCalElectron = {
-     untracked vstring outputCommands = 
-     {
-       "drop  *",
-       "keep  *_electronFilter_*_*",
-       "keep  *_alCaIsolatedElectrons_*_*"
-     }
-# put this when we have a filter
-    untracked PSet SelectEvents = {
-      vstring SelectEvents = { "pathALCARECOEcalCalElectron" }
-    }
+block OutALCARECOEcalCalElectron = 
+  {
+    untracked vstring outputCommands = 
+      {
+        "drop  *",
+        "keep  *_electronFilter_*_*",
+        "keep  *_alCaIsolatedElectrons_*_*"
+      }
   }	

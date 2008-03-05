@@ -1,30 +1,29 @@
 #
 #  run on collection of electrons to make a collection of AlCaReco electrons 
-#  and store them in the output collection
 #
 
+# hybrid clustering in the barrel
+include "RecoEcal/EgammaClusterProducers/data/hybridClusteringSequence.cff"
 
-  # hybrid clustering in the barrel
-  include "RecoEcal/EgammaClusterProducers/data/hybridClusteringSequence.cff"
-  
-  # island clustering for the endcaps
-  include "RecoEcal/EgammaClusterProducers/data/islandClusteringSequence.cff"
-  
-  include "Geometry/CaloEventSetup/data/CaloGeometry.cfi"
-  
-  # sequence to make si-strip based electrons
-  include "RecoEgamma/EgammaElectronProducers/data/electronSequence.cff"
+# island clustering for the endcaps
+include "RecoEcal/EgammaClusterProducers/data/islandClusteringSequence.cff"
 
+include "Geometry/CaloEventSetup/data/CaloGeometry.cfi"
 
- include "Calibration/EcalAlCaRecoProducers/data/alCaIsolatedElectrons.cfi"
+# sequence to make si-strip based electrons
+include "RecoEgamma/EgammaElectronProducers/data/electronSequence.cff"
 
-
-#  sequence seqALCARECOEcalCalElectron = {hybridClusteringSequence, islandClusteringSequence,electronSequence, alCaIsolatedElectrons}
+include "Calibration/EcalAlCaRecoProducers/data/alCaIsolatedElectrons.cfi"
 
 # this is the full path if you start from uncalibrated RecHits
-#  path	alcastreamElectron = {hybridClusteringSequence, islandClusteringSequence,electronSequence, alCaIsolatedElectrons}
+#  sequence seqALCARECOEcalCalElectronRECO = {hybridClusteringSequence, islandClusteringSequence,electronSequence, alCaIsolatedElectrons}
 
 # use this if siStripElectrons are already present
-#  path	alcastreamElectron = {alCaIsolatedElectrons}
+sequence seqALCARECOEcalCalElectronRECO = {alCaIsolatedElectrons}
 
-  sequence seqALCARECOEcalCalElectron = {alCaIsolatedElectrons}
+include "Calibration/EcalAlCaRecoProducers/data/ewkHLTFilter.cfi"
+replace ewkHLTFilter.HLTPaths = {"HLT1Electron", "HLT2Electron", "HLT1ElectronRelaxed" , "HLT2ElectronRelaxed" }
+
+include "Calibration/EcalAlCaRecoProducers/data/electronFilter.cfi"
+
+sequence seqALCARECOEcalCalElectron = {ewkHLTFilter, electronFilter, seqALCARECOEcalCalElectronRECO} //HLT selection: on
