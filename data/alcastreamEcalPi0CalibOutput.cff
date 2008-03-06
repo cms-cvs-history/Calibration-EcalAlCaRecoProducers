@@ -1,0 +1,13 @@
+  block alcastreamEcalPi0CalibOutput = {
+     untracked vstring outputCommands = 
+     {
+       "drop *",
+       "keep *_*_pi0EcalRecHitsEB_*"
+     }
+
+# put this if you have a filter
+#    untracked PSet SelectEvents = {
+#      vstring SelectEvents = { "alcastreamEcalPi0Calib" }
+#    }
+
+  }
