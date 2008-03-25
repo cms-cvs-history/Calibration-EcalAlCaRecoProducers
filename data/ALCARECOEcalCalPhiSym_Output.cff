@@ -10,8 +10,8 @@
      }
 
 # put this if you have a filter
-#    untracked PSet SelectEvents = {
-#      vstring SelectEvents = { "pathALCARECOEcalCalPhiSym" }
-#    }
+    untracked PSet SelectEvents = {
+      vstring SelectEvents = { "pathALCARECOEcalCalPhiSym" }
+    }
 
   }
