@@ -6,9 +6,7 @@
      untracked vstring outputCommands = 
      {
        "drop *",
-       "keep EcalRecHitsSorted_alCaPhiSymStream_*_*",
-       "keep *_l1GtUnpack_*_*",	
-       "keep *_gtDigis_*_*"
+       "keep EcalRecHitsSorted_alCaPhiSymStream_*_*"
      }
 
 # put this if you have a filter
