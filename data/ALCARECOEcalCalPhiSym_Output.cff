@@ -7,8 +7,10 @@
      {
        "drop *",
        "keep EcalRecHitsSorted_alCaPhiSymStream_*_*",
-       "keep *_l1GtUnpack_*_*",	
-       "keep *_gtDigis_*_*"
+       "keep *_hltL1GtUnpack_*_*",
+       "keep *_hltGtDigis_*_*",
+       "keep *_gtDigis_*_*",
+       "keep *_l1GtUnpack_*_*"
      }
 
 # put this if you have a filter
