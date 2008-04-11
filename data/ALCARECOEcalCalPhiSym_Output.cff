@@ -1,14 +1,15 @@
 # output block for alcastream EcalPhiSym
+# keep L1 info and laser-recalibrated hits : 
+# non-recalibrated hits have HLT as parent process
 
-  # output module 
-#  module alcastreamEcalPhiSymOutput = PoolOutputModule
   block OutALCARECOEcalCalPhiSym = {
      untracked vstring outputCommands = 
      {
        "drop *",
-       "keep EcalRecHitsSorted_alCaPhiSymStream_*_*",
-       "keep *_l1GtUnpack_*_*",	
-       "keep *_gtDigis_*_*"
+       "keep *_*_phiSymEcalRecHitsEB_*",
+       "keep *_*_phiSymEcalRecHitsEE_*",
+       "keep *_hltL1GtUnpack_*_*",
+       "keep *_hltGtDigis_*_*"
      }
 
 # put this if you have a filter
