@@ -8,7 +8,7 @@ module zeeHLT= HLTHighLevel{
     InputTag TriggerResultsTag = TriggerResults
     bool byName = true
     bool andOr= true
-    vstring HLTPaths ={ "HLT1Electron", "HLT2Electron" }
+    vstring HLTPaths ={ "HLT_IsoEle15_L1I", "HLT_DoubleIsoEle10_L1I" }
 }
 
 ############### zeeHLT.cff #########

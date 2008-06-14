@@ -5,13 +5,13 @@
   #
   # Passes events that are coming from the online phi-symmetry stream 
   # 
-  # Id: $Id: alcastreamEcalPhiSym.cff,v 1.5 2008/04/02 10:06:51 argiro Exp $
+  # Id: $Id: alcastreamEcalPhiSym.cff,v 1.6 2008/04/02 17:58:38 argiro Exp $
   #
  
   module ecalphiSymHLT= HLTHighLevel {
       InputTag TriggerResultsTag = TriggerResults::HLT
       bool andOr= true
-      vstring HLTPaths ={"AlCaEcalPhiSym"}
+      vstring HLTPaths ={"AlCa_EcalPhiSym"}
   }
 
  

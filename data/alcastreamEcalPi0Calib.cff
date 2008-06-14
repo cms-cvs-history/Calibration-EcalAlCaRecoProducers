@@ -2,7 +2,7 @@
   module ecalpi0CalibHLT= HLTHighLevel {
       InputTag TriggerResultsTag = TriggerResults::HLT
       bool andOr= true
-      vstring HLTPaths ={"AlCaEcalPi0"}
+      vstring HLTPaths ={"AlCa_EcalPi0"}
   }
 
  
