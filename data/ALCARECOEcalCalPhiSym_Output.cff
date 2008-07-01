@@ -8,8 +8,8 @@
        "drop *",
        "keep *_*_phiSymEcalRecHitsEB_*",
        "keep *_*_phiSymEcalRecHitsEE_*",
-       "keep *_hltL1GtUnpack_*_*",
-       "keep *_hltGtDigis_*_*"
+       "keep L1GlobalTriggerReadoutRecord_hltGtDigis_*_*",
+       "keep *_MEtoEDMConverter_*_*"
      }
 
 # put this if you have a filter
