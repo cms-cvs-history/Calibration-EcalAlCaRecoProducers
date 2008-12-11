@@ -1,7 +1,0 @@
-#### zeeMCInfo_EventContent.cff #########
-block HLTInfo = {
-    untracked vstring outputCommands = {
-	"keep edmTriggerResults_*_*_*"
-    }
-}
-########################################

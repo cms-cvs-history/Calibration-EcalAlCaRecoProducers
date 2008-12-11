@@ -1,8 +1,0 @@
- 
-  module ecalpi0CalibHLT= HLTHighLevel {
-      InputTag TriggerResultsTag = TriggerResults::HLT
-      bool andOr= true
-      vstring HLTPaths ={"AlCa_EcalPi0"}
-  }
-
- 

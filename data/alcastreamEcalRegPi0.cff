@@ -1,8 +1,0 @@
-
-  #------------------------------------------------
-  #AlCaReco filtering for pi0 calibration:
-  #------------------------------------------------
-  # create sequence for rechit filtering for pi0 calibration
-  include "Calibration/EcalAlCaRecoProducers/data/alCaPi0RegRecHits.cfi"
-
-  sequence seqAlcastreamEcalPi0 = {alCaPi0RegRecHits}
