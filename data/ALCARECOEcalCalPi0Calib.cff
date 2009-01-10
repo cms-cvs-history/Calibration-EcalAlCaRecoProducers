@@ -1,8 +1,0 @@
-
-  #------------------------------------------------
-  #AlCaReco pi0 calibration:
-  #------------------------------------------------
-
-  include "Calibration/EcalAlCaRecoProducers/data/alcastreamEcalPi0Calib.cff"
-
-  sequence seqALCARECOEcalCalPi0Calib = {ecalpi0CalibHLT}

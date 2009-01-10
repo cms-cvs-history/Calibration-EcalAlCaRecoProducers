@@ -1,8 +1,0 @@
-######### ALCARECOZeeMCEcalCalElectron_Output.cff ###################
-include "Calibration/EcalAlCaRecoProducers/data/ALCARECOEcalCalElectron_Output.cff"
-include "Calibration/EcalAlCaRecoProducers/data/zeeMCInfo_EventContent.cff"
-include "Calibration/EcalAlCaRecoProducers/data/zeeHLTInfo_EventContent.cff"
-
-replace OutALCARECOEcalCalElectron.outputCommands += MCInfo.outputCommands
-replace OutALCARECOEcalCalElectron.outputCommands += HLTInfo.outputCommands
-##########################################################

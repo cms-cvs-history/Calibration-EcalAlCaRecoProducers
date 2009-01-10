@@ -1,6 +1,0 @@
-######### ALCARECOZeeMCEcalCalElectron_Output.cff ###################
-include "Calibration/EcalAlCaRecoProducers/data/ALCARECOEcalCalElectron_Output.cff"
-include "Calibration/EcalAlCaRecoProducers/data/zeeMCInfo_EventContent.cff"
-replace OutALCARECOEcalCalElectron.SelectEvents.SelectEvents = {"zeeHLTPath"}
-replace OutALCARECOEcalCalElectron.outputCommands += MCInfo.outputCommands
-##########################################################
