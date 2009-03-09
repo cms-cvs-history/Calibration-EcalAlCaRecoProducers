@@ -2,10 +2,24 @@ import FWCore.ParameterSet.Config as cms
 
 from Calibration.EcalAlCaRecoProducers.alCaIsolatedElectrons_cfi import *
 from Calibration.EcalAlCaRecoProducers.electronIsolationSequence_cff import *
-from Calibration.EcalAlCaRecoProducers.ewkHLTFilter_cfi import *
+from HLTrigger.HLTfilters.hltHighLevel_cfi import *
 from Calibration.EcalAlCaRecoProducers.electronFilter_cfi import *
 
-ewkHLTFilter.HLTPaths = ['HLT_LooseIsoEle15_LW_L1R']
+#
+# The current (as of $date$) ALCA stream for single and double electron
+# calibration
+#
+
+isolElectronewkHLTFilter = hltHighLevel.clone()
+isolElectronewkHLTFilter.throw = False
+
+#
+# Here we specify trigger names for both 1E31 and 8E29
+# Since have throw = false, this setting will work for both menus
+#
+#
+isolElectronewkHLTFilter.HLTPaths = ['HLT_Ele15_SW_L1R', 'HLT_DoubleEle10_SW_L1R', # 1E31
+                                     'HLT_Ele10_LW_L1R', 'HLT_DoubleEle5_SW_L1R']  # 8E29
 
 goodElectrons = cms.EDFilter("CandViewRefSelector",
     filter = cms.bool(True),
@@ -29,11 +43,7 @@ goodElectronFilter2 = cms.EDFilter("CandViewCountFilter",
     minNumber = cms.uint32(0)
 )
 
-#testSelector = cms.EDFilter("AssociatedVariableMaxCutCandViewSelector",
-#    filter = cms.bool(True),
-#    src = cms.InputTag("egammaElectronTkIsolation"),
-#    max = cms.double(0.1)
-#)
+
 
 superClusterMerger =  cms.EDFilter("EgammaSuperClusterMerger",
     src = cms.VInputTag(cms.InputTag('correctedHybridSuperClusters'), cms.InputTag('correctedMulti5x5SuperClustersWithPreshower'))
@@ -67,6 +77,6 @@ goodSuperClusterFilter2 = cms.EDFilter("CandViewCountFilter",
 )
 
 seqALCARECOEcalCalElectronRECO = cms.Sequence(alCaIsolatedElectrons)
-#seqALCARECOEcalCalElectron = cms.Sequence(ewkHLTFilter*superClusterMerger*superClusterCands*goodSuperClusters*goodSuperClusterFilter*goodSuperClusters2*goodSuperClusterFilter2*goodElectrons*goodElectronFilter*goodElectrons2*goodElectronFilter2*electronFilter*electronIsolationSequence*testSelector*seqALCARECOEcalCalElectronRECO)
-seqALCARECOEcalCalElectron = cms.Sequence(ewkHLTFilter*superClusterMerger*superClusterCands*goodSuperClusters*goodSuperClusterFilter*goodSuperClusters2*goodSuperClusterFilter2*goodElectrons*goodElectronFilter*goodElectrons2*goodElectronFilter2*electronFilter*electronIsolationSequence*seqALCARECOEcalCalElectronRECO)
+
+seqALCARECOEcalCalElectron = cms.Sequence(isolElectronewkHLTFilter*superClusterMerger*superClusterCands*goodSuperClusters*goodSuperClusterFilter*goodSuperClusters2*goodSuperClusterFilter2*goodElectrons*goodElectronFilter*goodElectrons2*goodElectronFilter2*electronFilter*electronIsolationSequence*seqALCARECOEcalCalElectronRECO)
 
