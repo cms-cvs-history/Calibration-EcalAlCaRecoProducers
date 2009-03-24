@@ -1,0 +1,95 @@
+#
+#  run on collection of electrons to make a collection of AlCaReco electrons 
+#
+
+include "Calibration/EcalAlCaRecoProducers/data/alCaIsolatedElectrons.cfi"
+
+
+sequence seqALCARECOEcalCalElectronRECO = {alCaIsolatedElectrons}
+
+///////////////////// GSF ELECTRON FILTERS
+
+module goodElectrons = CandViewRefSelector {
+    InputTag src = pixelMatchGsfElectrons
+    string cut = "et > 20"
+    bool filter = false
+}
+
+module goodElectronFilter = CandViewCountFilter {
+    InputTag src = goodElectrons
+    uint32 minNumber = 1
+}
+
+module goodElectrons2 = CandViewRefSelector {
+    InputTag src = pixelMatchGsfElectrons
+    string cut = "et > 15"
+    bool filter = false
+}
+
+module goodElectronFilter2 = CandViewCountFilter {
+    InputTag src = goodElectrons2
+    uint32 minNumber = 2
+}
+
+
+
+////////////////////////// ISOLATION FILTER
+
+module testSelector = AssociatedVariableMaxCutCandViewSelector{
+ InputTag src = egammaElectronTkIsolation
+ double max = 2.5
+ bool filter = false
+}  
+
+
+////////////////////////// SUPERCLUSTERS FILTERS
+module superClusterMerger = SuperClusterMerger{
+    VInputTag src = {hybridSuperClusters, islandSuperClusters:islandEndcapSuperClusters }
+}
+
+module superClusterCands = ConcreteEcalCandidateProducer {
+    InputTag src = superClusterMerger
+    string particleType = "gamma"
+}
+
+
+module goodSuperClusters = CandViewRefSelector {
+    InputTag src = superClusterCands
+    string cut = "et > 20"
+    bool filter = false
+}
+
+module goodSuperClusterFilter = CandViewCountFilter {
+    InputTag src = goodSuperClusters
+    uint32 minNumber = 1
+}
+
+module goodSuperClusters2 = CandViewRefSelector {
+    InputTag src = superClusterCands
+    string cut = "et > 10"
+    bool filter = false
+}
+
+module goodSuperClusterFilter2 = CandViewCountFilter {
+    InputTag src = goodSuperClusters2
+    uint32 minNumber = 2
+}
+
+
+
+# for Egamma Isolation
+include "Calibration/EcalAlCaRecoProducers/data/electronIsolationSequence.cff"
+
+include "Calibration/EcalAlCaRecoProducers/data/ewkHLTFilter.cfi"
+
+include "Calibration/EcalAlCaRecoProducers/data/electronFilter.cfi"
+
+sequence seqALCARECOEcalCalElectron = { 
+    ewkHLTFilter, //HLT filter
+    superClusterMerger, superClusterCands, goodSuperClusters, goodSuperClusterFilter, goodSuperClusters2, goodSuperClusterFilter2,//SC filter 
+    goodElectrons, goodElectronFilter, goodElectrons2, goodElectronFilter2, //electron filter
+    electronFilter, 
+    electronIsolationSequence,
+    testSelector,
+    seqALCARECOEcalCalElectronRECO
+} 
