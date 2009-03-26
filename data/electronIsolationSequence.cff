@@ -1,0 +1,44 @@
+
+include "HLTrigger/Configuration/data/common/HLTSetup.cff"  
+
+
+module egammaElectronSqPtTkIsolation = ElectronSqPtTkIsolationProducer {
+    InputTag electronProducer =  electronFilter
+    InputTag trackProducer = generalTracks
+    double ptMin = 1.5
+    double intRadius = .02
+    double extRadius = .6
+    double maxVtxDist = .1
+    bool absolut = false
+}
+
+include "EgammaAnalysis/EgammaIsolationProducers/data/egammaElectronTkIsolation.cfi"
+replace  egammaElectronTkIsolation.electronProducer = electronFilter
+replace  egammaElectronTkIsolation.trackProducer = generalTracks
+replace  egammaElectronTkIsolation.ptMin = 1.5
+replace  egammaElectronTkIsolation.intRadius = .02
+replace  egammaElectronTkIsolation.extRadius = 0.6
+
+include "EgammaAnalysis/EgammaIsolationProducers/data/egammaHcalIsolation.cfi"
+replace egammaHcalIsolation.emObjectProducer = electronFilter
+replace egammaHcalIsolation.etMin = 0.
+replace egammaHcalIsolation.intRadius = 0.15
+replace egammaHcalIsolation.extRadius = .3
+replace egammaHcalIsolation.absolut = false
+ 
+include "EgammaAnalysis/EgammaIsolationProducers/data/egammaHOE.cfi"
+replace  egammaHOE.emObjectProducer = electronFilter
+
+include "EgammaAnalysis/EgammaIsolationProducers/data/egammaEcalIsolationSequence.cff"
+replace  egammaEcalIsolation.emObjectProducer = electronFilter
+replace  egammaEcalIsolation.absolut = false
+
+
+
+sequence electronIsolationSequence = { 
+                egammaElectronSqPtTkIsolation&	
+                egammaHcalIsolation&
+		egammaHOE&
+		egammaElectronTkIsolation&
+		egammaEcalIsolationSequence 
+}
